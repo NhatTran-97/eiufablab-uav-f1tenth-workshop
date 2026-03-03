@@ -4,7 +4,9 @@
 
 using namespace std;
 
-class House {
+class House 
+{
+private:
 protected:
     string name;
     string color;
@@ -53,24 +55,27 @@ public:
     }
 };
 
-class SmartHouse : public House {
-private:
-    string wifi_name;
 
-public:
-    SmartHouse(string name, string color, int rooms, pair<int, int> size, string wifi_name)
-        : House(name, color, rooms, size) {
-        this->wifi_name = wifi_name;
-    }
+class SmartHouse : public House 
+{
+    private:
+        string wifi_name;
 
-    void remote_control_light() {
-        cout << "Automatic in remote control lights mode" << endl;
-    }
+    public:
+        SmartHouse(string name, string color, int rooms, pair<int, int> size, string wifi_name) : House(name, color, rooms, size) 
+        {
+            this->wifi_name = wifi_name;
+        }
 
-    void show_info() override {
-        House::show_info();
-        cout << "WiFi Name  : " << wifi_name << endl;
-    }
+        void remote_control_light() 
+        {
+            cout << "Automatic in remote control lights mode" << endl;
+        }
+
+        void show_info() override {
+            House::show_info();
+            cout << "WiFi Name  : " << wifi_name << endl;
+        }
 };
 
 int main() {

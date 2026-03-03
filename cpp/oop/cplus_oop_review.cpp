@@ -62,7 +62,9 @@ public:
 int main() {
     // Create objects (instances)
     House house1("House1", "Blue", 4, {30, 40});
+
     House house2("House2", "Red", 5, {20, 30});
+    
     House house3("House3", "White", 3, {50, 60});
 
     // Use methods
